@@ -4,13 +4,6 @@ from selenium.webdriver.common.by import By
 import re
 import time
 
-def extraindoApenasTexto(tweet_texto):
-    
-    texto = re.sub('<[^>]*>'," ",tweet_texto)
-    texto = re.sub('\s+',' ',texto)
-    texto = texto.strip()
-    return texto
-
 def getDriverOnLinkedIn(timeout):
     # create a new browser session
     driver = webdriver.Chrome("./chromedriver")
@@ -18,7 +11,7 @@ def getDriverOnLinkedIn(timeout):
     driver.maximize_window()#When launched, maximize it
     # Navigate to the application home page
     driver.get("https://linkedin.com/login")
-    #waiting the browser load the twitter webpage
+    #waiting the browser load linkedin webpage
     return driver
     
 def fazerLogin(usuario,senha,driver):
