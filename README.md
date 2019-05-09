@@ -1,0 +1,1 @@
+bot que coleta perfis do linkedIn
