@@ -1,0 +1,11 @@
+#timeoutNavegador in seconds
+timeoutNavegador = 30
+
+#timeToLogIn in seconds
+timeToLogIn = 3
+
+user = 
+password = 
+
+#timeToLoadTheProfile in seconds
+timeToLoadTheProfile = 3
