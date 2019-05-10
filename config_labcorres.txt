@@ -4,8 +4,8 @@ timeoutNavegador = 30
 #timeToLogIn in seconds
 timeToLogIn = 3
 
-user = labcorres@protonmail.com
-password = SF0973hgf@g@vvK2
+user = 
+password = 
 
 #timeToLoadTheProfile in seconds
 timeToLoadTheProfile = 3
