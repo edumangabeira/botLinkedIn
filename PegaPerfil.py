@@ -5,6 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from parsel import Selector
 import re
 import time
+# import logging
 
 
 def getDriverOnLinkedIn(timeout, maquina):
@@ -51,21 +52,29 @@ def getParametrosBot(arquivo):
     return parametros
 
 
+def campos_perfil()
+
+
 def pegandoPerfil(driver, contato):
     driver.get("https://linkedin.com{}".format(contato))
     time.sleep(5)
     sel = Selector(text=driver.page_source)
     campos = []
-    try:
-        nome = sel.xpath('//*[starts-with(@class, "pv-top-card-section__name")]/text()').extract_first()
-        print(nome)
+
+    ''' campo nome '''
+    nome = sel.xpath('//*[starts-with(@class, "pv-top-card-section__name")]/text()').extract_first()
+    print(nome)
+    descricao = ""
+    formacao = ""
+    cargos = []
+    recomendacoes = []
+    interesses = []
 
     # driver.find_element_by_xpath("//div[contains(@class='pv-top-card-section__name')]/h1")
     # "//div[contains(@class='pv-top-card-section__name.inline.t-24.t-black.t-normal')]/h1")
     # nome.get_attribute("innerHTML")
-    except NoSuchElementException:
-        print("não foi possível encontrar xpath {}".format("pv-top-card-section__name"))
     campos.append(nome.strip())
+    # campos.extend(nome, descricao, formacao, cargos, recomendacoes, interesses)
     print(campos)
     return campos
 
@@ -84,6 +93,7 @@ def RodarColetador(arquivo, contatos, maquina):
             user = parametros['user']
             password = parametros['password']
             fazerLogin(user, password, driver)
+            # raise Exception("Invalid login")
             # waiting the user login before catch the desired fields
             time.sleep(int(parametros['timeToLoadTheProfile']))
 
