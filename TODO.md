@@ -1,6 +1,8 @@
-### [PENDENTE] organizar campos da tabela a ser preenchida e definir a formatação dos dados
+# Encontrar a melhor maneira de extrair o texto da página
+# Estruturar os dados do campos em formato JSON
 
-### [PENDENTE] atualmente os dados de cada perfil estão sendo salvos em arquivos, substituir por tabela csv(a escolha ainda pode ser discutida, já há uma implementação pronta em JSON que pode ser reproduzida, mas é preciso levar em conta quem terá esses dados em mão).
+### [PENDENTE] Definir a formatação dos dados para cada grupo
 
-### [PENDENTE] checar se login foi feito com sucesso
-### [PENDENTE] implementar logging
+## Itens ainda sob avaliação de necessidade
+#### [PENDENTE] checar se login foi feito com sucesso
+#### [PENDENTE] implementar logging

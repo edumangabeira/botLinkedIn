@@ -5,16 +5,13 @@ from selenium.common.exceptions import NoSuchElementException
 from parsel import Selector
 import re
 import time
+# import os
 # import logging
 
 
-def getDriverOnLinkedIn(timeout, maquina):
+def getDriverOnLinkedIn(timeout):
     # cria nova sessão no browser
-    if maquina == "windows":
-        diretorio = r"C:\Users\Eduardo\botLinkedIn\windows_edu\chromedriver.exe"
-    else:
-        diretorio = "mint_edu/chromedriver"
-    driver = webdriver.Chrome(diretorio)
+    driver = webdriver.Chrome("./chromedriver")
 
     driver.implicitly_wait(timeout)  # 30 segundos para iniciar o browser
     driver.maximize_window()  # maximiza ao iniciar
@@ -52,7 +49,7 @@ def getParametrosBot(arquivo):
     return parametros
 
 
-def campos_perfil()
+def campos_perfil() 
 
 
 def pegandoPerfil(driver, contato):
@@ -79,7 +76,7 @@ def pegandoPerfil(driver, contato):
     return campos
 
 
-def RodarColetador(arquivo, contatos, maquina):
+def RodarColetador(arquivo, contatos):
 
     with open(arquivo, "r") as arq:
         parametros = getParametrosBot(arq)
@@ -88,7 +85,7 @@ def RodarColetador(arquivo, contatos, maquina):
         for contato in contatos:
             contato = str(contato)
             contato = contato.strip()
-            driver = getDriverOnLinkedIn(parametros['timeoutNavegador'], maquina)
+            driver = getDriverOnLinkedIn(parametros['timeoutNavegador'])
             time.sleep(int(parametros['timeToLogIn']))
             user = parametros['user']
             password = parametros['password']
@@ -105,11 +102,5 @@ def RodarColetador(arquivo, contatos, maquina):
 
 
 if __name__ == '__main__':
-    '''maquina = input("A maquina usada é Windows ou Linux? Digite 1 para Windows e 2 para Linux")
-    if maquina == 1:
-        maquina = "windows"
-    else:
-        maquina = "linux"
-    '''
-    maquina = "windows"
-    RodarColetador("config_labcorres.txt", "simula_contatos.txt", maquina)
+   
+    RodarColetador("config_labcorres.txt", "simula_contatos.txt")
